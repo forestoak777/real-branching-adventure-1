@@ -402,5 +402,10 @@ class Program
     static void TheEnd()
     {
         StringTyper.TypeString("The End!");
+        StringTyper.PoopDelay();
+        Console.WriteLine();
+        StringTyper.TypeString("Press Enter to Close the Game...");
+        Console.ReadLine();
+        Console.WriteLine();
     }
 }
