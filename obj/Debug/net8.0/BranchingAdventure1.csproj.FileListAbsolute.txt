@@ -1,0 +1,14 @@
+C:\Users\Catman\OneDrive\Desktop\real-branching-adventure-1-main\bin\Debug\net8.0\BranchingAdventure1.exe
+C:\Users\Catman\OneDrive\Desktop\real-branching-adventure-1-main\bin\Debug\net8.0\BranchingAdventure1.deps.json
+C:\Users\Catman\OneDrive\Desktop\real-branching-adventure-1-main\bin\Debug\net8.0\BranchingAdventure1.runtimeconfig.json
+C:\Users\Catman\OneDrive\Desktop\real-branching-adventure-1-main\bin\Debug\net8.0\BranchingAdventure1.dll
+C:\Users\Catman\OneDrive\Desktop\real-branching-adventure-1-main\bin\Debug\net8.0\BranchingAdventure1.pdb
+C:\Users\Catman\OneDrive\Desktop\real-branching-adventure-1-main\obj\Debug\net8.0\BranchingAdventure1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Catman\OneDrive\Desktop\real-branching-adventure-1-main\obj\Debug\net8.0\BranchingAdventure1.AssemblyInfoInputs.cache
+C:\Users\Catman\OneDrive\Desktop\real-branching-adventure-1-main\obj\Debug\net8.0\BranchingAdventure1.AssemblyInfo.cs
+C:\Users\Catman\OneDrive\Desktop\real-branching-adventure-1-main\obj\Debug\net8.0\BranchingAdventure1.csproj.CoreCompileInputs.cache
+C:\Users\Catman\OneDrive\Desktop\real-branching-adventure-1-main\obj\Debug\net8.0\BranchingAdventure1.dll
+C:\Users\Catman\OneDrive\Desktop\real-branching-adventure-1-main\obj\Debug\net8.0\refint\BranchingAdventure1.dll
+C:\Users\Catman\OneDrive\Desktop\real-branching-adventure-1-main\obj\Debug\net8.0\BranchingAdventure1.pdb
+C:\Users\Catman\OneDrive\Desktop\real-branching-adventure-1-main\obj\Debug\net8.0\BranchingAdventure1.genruntimeconfig.cache
+C:\Users\Catman\OneDrive\Desktop\real-branching-adventure-1-main\obj\Debug\net8.0\ref\BranchingAdventure1.dll
