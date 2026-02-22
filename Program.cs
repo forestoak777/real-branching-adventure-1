@@ -3,7 +3,6 @@ using Microsoft.VisualBasic;
 
 class Program
 {
-
     //Starts the game
     static void Main()
     {
