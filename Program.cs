@@ -3,11 +3,14 @@ using Microsoft.VisualBasic;
 
 class Program
 {
+
+    //Starts the game
     static void Main()
     {
         Part1();
     }
 
+    //This part includes the first two choices
     static void Part1()
     {
 
@@ -119,6 +122,7 @@ class Program
 
     }
 
+    //This is the 'school' part of the game... And the firetruck part.
     static void Part2()
     {
         StringTyper.TypeString();
@@ -222,6 +226,7 @@ class Program
 
     static string weapon_choice = "";
 
+    //This is the part where you choose your permanent weapon
     static void Part3()
     {
         PauseForUserInput();
@@ -263,6 +268,7 @@ class Program
         Part4();
     }
 
+    //This is the part where you sleep outside because your house burned down
     static void Part4()
     {
         PauseForUserInput();
@@ -328,6 +334,8 @@ class Program
             Part4();
         }
 
+
+        //This is the part where a bear attacks your family. It's the final part.
         static void Part5()
         {
             PauseForUserInput();
@@ -392,15 +400,7 @@ class Program
                     TheEnd();
                 }
             }
-
-
-
-
-
-
         }
-
-
     }
 
     static void PauseForUserInput()
