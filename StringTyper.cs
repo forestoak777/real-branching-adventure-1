@@ -15,7 +15,7 @@ public static class StringTyper
 
     public static void PoopString(string str = "", int milisecondsDelay = 100)
     {
-        
+
         Thread.Sleep(milisecondsDelay);
         Console.WriteLine(str);
     }
@@ -24,7 +24,7 @@ public static class StringTyper
     {
         Thread.Sleep(milisecondsDelay);
     }
-    
-    
+
+
 
 }
