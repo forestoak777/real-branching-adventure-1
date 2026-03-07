@@ -3,18 +3,15 @@ using Microsoft.VisualBasic;
 
 class Program
 {
-    //Starts the game
     static void Main()
     {
-        ProfanityFilter.LoadProfanityList(); // Load your profanity.txt
-        Part1(); // Start your game
+        ProfanityFilter.LoadProfanityList();
+        Part1();
     }
 
-    //This part includes the first two choices
     static void Part1()
     {
 
-        // Welcome message
         StringTyper.TypeString("Welcome to the eggscape room!");
         StringTyper.TypeString("You awaken in a padded white room.");
         StringTyper.TypeString("The only decoration in the room is a poster of an egg.");
@@ -25,6 +22,30 @@ class Program
 
         string? fakeName = Console.ReadLine();
 
+        // ----------- ADDED BRANCHES (nothing else changed) -----------
+
+        if (fakeName != null)
+        {
+            string nameCheck = fakeName.ToLower();
+
+            if (nameCheck == "mike mike")
+            {
+                MikeMikeRoute();
+                return;
+            }
+            else if (nameCheck == "mike f**k")
+            {
+                MikeFkRoute();
+                return;
+            }
+            else if (nameCheck == "frisk")
+            {
+                FriskRoute();
+                return;
+            }
+        }
+
+        // ----------- ORIGINAL CODE CONTINUES -----------
 
         string playerName = "Diedre Mengedoht";
 
@@ -100,8 +121,6 @@ class Program
                     Part1();
                 }
 
-
-
             } while (choice2 != "1" && choice2 != "2" && choice2 != "3");
         }
 
@@ -120,6 +139,87 @@ class Program
             Part2();
         }
 
+    }
+
+    // ---------------- NEW ROUTES ADDED ----------------
+
+    static void MikeMikeRoute()
+    {
+        StringTyper.TypeString("You remember your name...");
+        StringTyper.TypeString("MIKE MIKE.");
+
+        StringTyper.TypeString("Your memories suddenly return.");
+        StringTyper.TypeString("You are actually a secret agent.");
+
+        StringTyper.TypeString("Your mission was to hunt down Mr. Sheit.");
+
+        StringTyper.TypeString("You check the files.");
+
+        StringTyper.TypeString("Mr. Sheit died forty years ago.");
+
+        StringTyper.TypeString("MISSION COMPLETE.");
+
+        StringTyper.TypeString("SECRET AGENT ENDING!");
+        TheEnd();
+    }
+
+    static void MikeFkRoute()
+    {
+        StringTyper.TypeString("You remember your name...");
+        StringTyper.TypeString("MIKE F**K.");
+
+        StringTyper.TypeString("Suddenly, a gang of gooners appears behind you.");
+
+        StringTyper.TypeString("\"Hey Mike F**k!\" they shout.");
+        StringTyper.TypeString("\"Who are we giving wedgies to today?\"");
+
+        StringTyper.TypeString("You look down at your hands.");
+
+        StringTyper.TypeString("You am become bully, destroyer of nerds.");
+
+        StringTyper.TypeString("BULLY ENDING!");
+        TheEnd();
+    }
+
+    static void FriskRoute()
+    {
+        Random rnd = new Random();
+        int outcome = rnd.Next(2); // 0 or 1 randomly
+
+        if (outcome == 0)
+        {
+            StringTyper.TypeString("You remember your name...");
+            StringTyper.TypeString("Frisk.");
+            StringTyper.TypeString("Your life will be a living hell.");
+            StringTyper.TypeString("You wake up in the eggscape room.");
+            StringTyper.TypeString("The air is too thick and you suffocate.");
+        }
+        else
+        {
+            StringTyper.TypeString("You remember your name...");
+            StringTyper.TypeString("Frisk.");
+            StringTyper.TypeString("Your life will be a living hell.");
+            StringTyper.TypeString("You wake up in the eggscape room.");
+            StringTyper.TypeString("A monster attacks!");
+            StringTyper.TypeString("You instantly die.");
+        }
+
+        StringTyper.TypeString();
+        StringTyper.TypeString("Do you want to restart or exit the game?");
+        StringTyper.TypeString("1) Restart");
+        StringTyper.TypeString("2) Exit");
+
+        string? choice = Console.ReadLine();
+
+        if (choice == "1")
+        {
+            FriskRoute(); // restart the Frisk path
+        }
+        else
+        {
+            StringTyper.TypeString("Ok. Exiting the game. Thanks for playing!");
+            Environment.Exit(0);
+        }
     }
 
     //This is the 'school' part of the game... And the firetruck part.
@@ -223,7 +323,7 @@ class Program
 
     static string weapon_choice = "";
 
-    //This is the part where you choose your permanent weapon
+    // Part3: choosing your permanent weapon
     static void Part3()
     {
         PauseForUserInput();
@@ -238,8 +338,8 @@ class Program
         StringTyper.TypeString("2) Slammer");
         StringTyper.TypeString("3) Blammer");
 
-        string choice = "";
-        choice = Console.ReadLine();
+        string choice = Console.ReadLine();
+
         if (choice == "1")
         {
             StringTyper.TypeString("Yeah I guess that's a reasonable choice.");
@@ -265,7 +365,7 @@ class Program
         Part4();
     }
 
-    //This is the part where you sleep outside because your house burned down
+    // Part4: sleeping outside after the fire
     static void Part4()
     {
         PauseForUserInput();
@@ -280,7 +380,7 @@ class Program
         PauseForUserInput();
 
         StringTyper.TypeString("Your Dad hates you because all of his silver and gold were destroyed in the fire.");
-        StringTyper.TypeString("Your Mom hates you because all of his silver and gold were destroyed in the fire.");
+        StringTyper.TypeString("Your Mom hates you because all of her silver and gold were destroyed in the fire.");
         StringTyper.TypeString("As for your punishment, you are forced to sleep outside of the tent on the cold ground instead of in the warm, heated tent");
 
         StringTyper.PoopDelay(1000);
@@ -311,7 +411,7 @@ class Program
         else if (relationship_repair_choice == "3")
         {
             StringTyper.TypeString("You enter their tent in an attempt to apologize to your parents.");
-            StringTyper.TypeString("As your perform shy finger twiddling, you say to your Dad, \"Dada I sowee. O_0. Pwease dont make me sweep outswide the twent.\"");
+            StringTyper.TypeString("As you perform shy finger twiddling, you say to your Dad, \"Dada I sowee. O_0. Pwease dont make me sweep outswide the twent.\"");
             StringTyper.TypeString("He looks angry and disappointed at you. But then, he breaks down into tears.");
             StringTyper.TypeString("He says, \"Son, I'm so sorry for being so cruel to you. I promise that things will be different from now on.\"");
             StringTyper.TypeString("You hear a strange rumbling noise.");
@@ -330,87 +430,83 @@ class Program
             StringTyper.TypeString("You Died! Go back in time as punishment...");
             Part4();
         }
+    }
 
+    // Part5: the bear attack
+    static void Part5()
+    {
+        PauseForUserInput();
+        StringTyper.PoopDelay(1000);
+        StringTyper.PoopString("Alls of the sudden...");
+        StringTyper.PoopDelay(1000);
+        StringTyper.PoopString("A bear comes out of the woods and is about to maul your family!");
+        Console.WriteLine();
 
-        //This is the part where a bear attacks your family. It's the final part.
-        static void Part5()
+        StringTyper.PoopDelay(500);
+        StringTyper.PoopString("What do you do?");
+        StringTyper.PoopString("1) Just sit there and watch the bear kill your parents", 100);
+        StringTyper.PoopString("2) Fight the bear with the weapon from your dream", 1000);
+        StringTyper.TypeString("All rye, choose now: ");
+
+        var bear_choice = Console.ReadLine();
+
+        if (bear_choice == "1")
         {
-            PauseForUserInput();
-            StringTyper.PoopDelay(1000);
-            StringTyper.PoopString("Alls of the sudden...");
-            StringTyper.PoopDelay(1000);
-            StringTyper.PoopString("A bear comes out of the woods and is about to maul your family!");
-            Console.WriteLine();
-
             StringTyper.PoopDelay(500);
-            StringTyper.PoopString("What do you do?");
-            StringTyper.PoopString("1) Just sit there and watch the bear kill your parents", 100);
-            StringTyper.PoopString("2) Fight the bear with the weapon from your dream", 1000);
-            StringTyper.TypeString("All rye, choose now: ");
-
-            var bear_choice = Console.ReadLine();
-
-            if (bear_choice == "1")
+            StringTyper.TypeString("You watch as the bear eats your parents.");
+            StringTyper.TypeString("Then the bear turns and eats you.");
+            StringTyper.TypeString("I guess your actions have consequences, hrmmmm?");
+            Part5();
+        }
+        else if (bear_choice == "2")
+        {
+            if (weapon_choice == "1")
             {
-                StringTyper.PoopDelay(500);
-                StringTyper.TypeString("You watch as the bear eats your parents.");
-                StringTyper.TypeString("Then the bear turns and eats you.");
-                StringTyper.TypeString("I guess your actions have consequences, hrmmmm?");
-                Part5();
-
+                StringTyper.TypeString("You throw your HAMMER at the bear's head and it misses.");
+                StringTyper.TypeString("However, it hits he nutsack and kills the bear.");
+                StringTyper.TypeString("Everyone in the town suddenly appears around you and praises you as a hero!");
+                StringTyper.TypeString("\"I'm sorry for giving you a wedgie.\" says Mike F**k. \"I promise I'll make it up to you!\"");
+                StringTyper.TypeString("\"I couldn't be prouder of you, son\" says your Dad");
+                StringTyper.TypeString("GOOD ENDING!");
+                StringTyper.TypeString("(By the way, your Dad is a secret agent named Mike Mike. The man he was searching for, Mr. Sheit, died forty years ago. So that's why your Dad was mean to you.)");
+                StringTyper.TypeString("LORE INCORPORATED!", 50);
+                TheEnd();
             }
-            else if (bear_choice == "2")
+            else if (weapon_choice == "2" || weapon_choice == "3")
             {
-                if (weapon_choice == "1")
-                {
-                    StringTyper.TypeString("You throw your HAMMER at the bear's head and it misses.");
-                    StringTyper.TypeString("However, it hits he nutsack and kills the bear.");
-                    StringTyper.TypeString("Everyone in the town suddenly appears around you and praises you as a hero!");
-                    StringTyper.TypeString("\"I'm sorry for giving you a wedgie.\" says Mike F**k. \"I promise I'll make it up to you!\"");
-                    StringTyper.TypeString("\"I couldn't be prouder of you, son\" says your Dad");
-                    StringTyper.TypeString("GOOD ENDING!");
-                    StringTyper.TypeString("(By the way, your Dad is a secret agent named Mike Mike. The man he was searching for, Mr. Sheit, died forty years ago. So that's why your Dad was mean to you.)");
-                    StringTyper.TypeString("LORE INCORPORATED!", 50);
-                    TheEnd();
-
-                }
-                else if (weapon_choice == "2")
-                {
-                    StringTyper.TypeString("You throw your SLAMMER at the bear and nothing happens because a SLAMMER isn't a real thing.");
-                    StringTyper.TypeString("But the bear is confused by your weirdness and its brain explodes.");
-                    StringTyper.TypeString("So you get a GOOD ENDING... I guess?");
-                    TheEnd();
-
-
-                }
-                else if (weapon_choice == "3")
-                {
-                    StringTyper.TypeString("You throw your BLAMMER at the bear and nothing happens because a BLAMMER isn't a real thing.");
-                    StringTyper.TypeString("But the bear is confused by your weirdness and its brain explodes.");
-                    StringTyper.TypeString("So you get a GOOD ENDING... I guess?");
-                    TheEnd();
-                }
-                else
-                {
-                    StringTyper.TypeString("The bear kills you because you didn't choose a weapon properly.");
-                    StringTyper.TypeString("BAD ENDING!");
-                    TheEnd();
-                }
+                StringTyper.TypeString("You throw your " + (weapon_choice == "2" ? "SLAMMER" : "BLAMMER") + " at the bear and nothing happens because it isn't a real thing.");
+                StringTyper.TypeString("But the bear is confused by your weirdness and its brain explodes.");
+                StringTyper.TypeString("So you get a GOOD ENDING... I guess?");
+                TheEnd();
+            }
+            else
+            {
+                StringTyper.TypeString("The bear kills you because you didn't choose a weapon properly.");
+                StringTyper.TypeString("BAD ENDING!");
+                TheEnd();
             }
         }
+        else
+        {
+            StringTyper.TypeString("You hesitated too long. The bear mauls everyone, including you.");
+            StringTyper.TypeString("BAD ENDING!");
+            TheEnd();
+        }
     }
-
     static void PauseForUserInput()
     {
-        StringTyper.PoopDelay();
-        Console.WriteLine();
-        StringTyper.TypeString("Press Enter to Continue...");
+        Console.WriteLine("Press Enter to continue...");
         Console.ReadLine();
-        Console.WriteLine();
     }
-
     static void TheEnd()
     {
-        StringTyper.TypeString("The End!");
+        StringTyper.TypeString();
+        StringTyper.TypeString("***************");
+        StringTyper.TypeString("   THE END   ");
+        StringTyper.TypeString("***************");
+        StringTyper.TypeString("Thanks for playing!");
+        StringTyper.TypeString("Press Enter to exit...");
+        Console.ReadLine();
+        Environment.Exit(0); // This actually ends the program
     }
 }
