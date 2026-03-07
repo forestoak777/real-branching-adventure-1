@@ -6,7 +6,8 @@ class Program
     //Starts the game
     static void Main()
     {
-        Part1();
+        ProfanityFilter.LoadProfanityList(); // Load your profanity.txt
+        Part1(); // Start your game
     }
 
     //This part includes the first two choices
@@ -139,15 +140,12 @@ class Program
 
         StringTyper.TypeString();
 
-        if (yell.Contains("Fuck", StringComparison.OrdinalIgnoreCase) || yell.Contains("Shit", StringComparison.OrdinalIgnoreCase) || yell.Contains("Bitch", StringComparison.OrdinalIgnoreCase) || yell.Contains("crap", StringComparison.OrdinalIgnoreCase) || yell.Contains("Poop", StringComparison.OrdinalIgnoreCase) || yell.Contains("God Dammit", StringComparison.OrdinalIgnoreCase) || yell.Contains("God Damn It", StringComparison.OrdinalIgnoreCase))
+        if (ProfanityFilter.ContainsProfanity(yell))
         {
             StringTyper.TypeString("The principal, who so happened to be fixing a locker in that hallway with a handheld drill,");
             StringTyper.TypeString("runs over to you and drills a hole through your skull in his fury. You die.");
-            StringTyper.PoopDelay(500);
-            Console.WriteLine();
             StringTyper.TypeString("Plase press enter to continue.");
             Console.ReadLine();
-            Console.Clear();
             Part2();
         }
         else
