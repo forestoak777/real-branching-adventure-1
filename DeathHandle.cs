@@ -1,7 +1,6 @@
 static class DeathHandler
 {
     private static int deathCount = 0;
-
     private static readonly (string, string)[] deathMessages =
     {
         ("You died.", "you'll get em next time champ."),
@@ -26,7 +25,8 @@ static class DeathHandler
         ("Twenty deaths.", "You're ******* pathetic.")
     };
 
-    public static void HandleDeath()
+    // restartChapter is the function to call if the player chooses to keep playing
+    public static void HandleDeath(Action restartChapter)
     {
         deathCount++;
 
@@ -48,7 +48,20 @@ static class DeathHandler
         }
 
         PauseForUserInput();
-        Program.Part1();
+
+        // ask the player if they want to restart the current chapter or quit
+        StringTyper.TypeString("1) Restart this chapter");
+        StringTyper.TypeString("2) Quit");
+        string? choice = Console.ReadLine();
+
+        if (choice == "2")
+        {
+            Environment.Exit(0);
+        }
+        else
+        {
+            restartChapter();
+        }
     }
 
     private static void PityEnding()
@@ -64,7 +77,6 @@ static class DeathHandler
         StringTyper.TypeString("You find yourself in a white void, devoid of any death.");
         StringTyper.TypeString();
         StringTyper.TypeString("PITY ENDING ACHIEVED.");
-
         TheEnd();
     }
 
